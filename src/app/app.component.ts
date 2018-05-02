@@ -15,6 +15,15 @@ export class AppComponent {
     new Keg('Amber Apple', 'Woodchuck', 4, 5),
     new Keg('Pineapple Oasis', 'Portland Cider Co', 10, 9)
   ];
+  
+  priceColor(currentKeg) {
+    if (currentKeg.price <= 5) {
+      return "low-price";
+    } else {
+      return "high-price";
+    }
+  }
+
   selectedKeg = null;
   editKeg(clickedKeg) {
     this.selectedKeg = clickedKeg;
@@ -24,13 +33,6 @@ export class AppComponent {
     this.selectedKeg = null;
   }
 
-  priceColor(currentKeg) {
-    if (currentKeg.price <= 5) {
-      return "low-price";
-    } else {
-      return "high-price";
-    }
-  }
 
   sellPint(currentKeg) {
     currentKeg.pints -=1;
