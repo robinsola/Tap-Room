@@ -24,4 +24,22 @@ export class AppComponent {
     this.selectedKeg = null;
   }
 
+  priceColor(currentKeg) {
+    if (currentKeg.price <= 5) {
+      return "low-price";
+    } else {
+      return "high-price";
+    }
+  }
+
+  sellPint(currentKeg) {
+    currentKeg.pints -=1;
+  }
+
+  kegColor(currentKeg) {
+    if (currentKeg.pints <= 10) {
+      return "low-keg";
+    }
+  }
+
 }
