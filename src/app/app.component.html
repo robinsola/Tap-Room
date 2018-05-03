@@ -4,23 +4,9 @@
   <div class="row">
     <div class="col-lg-6 taproom">
       <h3>The Taproom</h3>
-      <ol>
-        <li *ngFor="let currentKeg of kegs"><strong>{{currentKeg.name}}</strong>, {{currentKeg.brand}}<br>abv: {{currentKeg.abv}}%<p [class]="kegColor(currentKeg)">{{currentKeg.pints}} pints left</p><h4 [class]="priceColor(currentKeg)">${{currentKeg.price}} pints</h4><br><button (click)="editKeg(currentKeg)">edit</button> <button (click)="sellPint(currentKeg)">get pint</button></li>
-      </ol>
+    <app-keg-list [childKegList]="masterKegList" (clickSender)="editKeg($event)"></app-keg-list>
     </div>
-    <div *ngIf="selectedKeg" class=" col-lg-6 edit">
-      <h4>Edits for: {{selectedKeg.name}}</h4>
-      <label>Cider Name: </label>
-      <input [(ngModel)]="selectedKeg.name"><br>
-      <label>Cider Brand: </label>
-      <input [(ngModel)]="selectedKeg.brand"><br>
-      <label>Alcohol Percentage: </label>
-      <input [(ngModel)]="selectedKeg.abv"><br>
-      <label>Pints Available: </label>
-      <input [(ngModel)]="selectedKeg.pints"><br>
-      <label>Price per Pint: </label>
-      <input [(ngModel)]="selectedKeg.price"><br>
-      <button (click)="finishEdit()">submit</button>
-    </div>
+    <app-edit-keg [childSelectedKeg]="selectedKeg" (clickedDone)="finishEdit()"></app-edit-keg>
+
   </div>
 </div>

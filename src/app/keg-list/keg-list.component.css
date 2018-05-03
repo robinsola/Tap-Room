@@ -1,0 +1,18 @@
+li {
+  margin: 25px;
+  padding: 10px;
+  list-style: none;
+}
+
+.high-price {
+  color: #138fc1;
+}
+
+.low-price {
+  color: #67c113;
+}
+
+.low-keg {
+  color: #e21212;
+  font-weight: bold;
+}

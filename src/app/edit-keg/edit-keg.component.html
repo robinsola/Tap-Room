@@ -1,0 +1,14 @@
+<div *ngIf="childSelectedKeg" class=" col-lg-6 edit">
+  <h4>Edits for: {{selectedKeg.name}}</h4>
+  <label>Cider Name: </label>
+  <input [(ngModel)]="childSelectedKeg.name"><br>
+  <label>Cider Brand: </label>
+  <input [(ngModel)]="childSelectedKeg.brand"><br>
+  <label>Alcohol Percentage: </label>
+  <input [(ngModel)]="childSelectedKeg.abv"><br>
+  <label>Pints Available: </label>
+  <input [(ngModel)]="childSelectedKeg.pints"><br>
+  <label>Price per Pint: </label>
+  <input [(ngModel)]="childSelectedKeg.price"><br>
+  <button (click)="finishEdit()">submit</button>
+</div>

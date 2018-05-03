@@ -8,21 +8,13 @@ import { Keg } from './models/keg.model';
 })
 export class AppComponent {
   title = 'the Cider House';
-  kegs: Keg[] = [
+  masterKegList: Keg[] = [
     new Keg('Sweet Pear','Angry Orchard', 3, 4),
     new Keg('Hoppy Grapefruit','Square Mile', 6,  7),
     new Keg('Super Dry', 'Seattle Cider', 6, 6),
     new Keg('Amber Apple', 'Woodchuck', 4, 5),
     new Keg('Pineapple Oasis', 'Portland Cider Co', 10, 9)
   ];
-  
-  priceColor(currentKeg) {
-    if (currentKeg.price <= 5) {
-      return "low-price";
-    } else {
-      return "high-price";
-    }
-  }
 
   selectedKeg = null;
   editKeg(clickedKeg) {
@@ -36,12 +28,6 @@ export class AppComponent {
 
   sellPint(currentKeg) {
     currentKeg.pints -=1;
-  }
-
-  kegColor(currentKeg) {
-    if (currentKeg.pints <= 10) {
-      return "low-keg";
-    }
   }
 
 }

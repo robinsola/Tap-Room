@@ -1,0 +1,3 @@
+<ol>
+  <li *ngFor="let currentKeg of childKegList"><strong>{{currentKeg.name}}</strong>, {{currentKeg.brand}}<br>abv: {{currentKeg.abv}}%<p [class]="kegColor(currentKeg)">{{currentKeg.pints}} pints left</p><h4 [class]="priceColor(currentKeg)">${{currentKeg.price}} pints</h4><br><button (click)="editButtonClicked(currentKeg)">edit</button> <button (click)="sellPint(currentKeg)">get pint</button></li>
+</ol>
