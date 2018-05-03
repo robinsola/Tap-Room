@@ -1,0 +1,14 @@
+<div class="add">
+  <h1>Add Keg</h1>
+  <div>
+    <label>Cider Name:</label>
+    <input #newName><br>
+    <label>Cider Brand:</label>
+    <input #newBrand><br>
+    <label>Price per pint:</label>
+    <input #newPrice><br>
+    <label>Alcohol content:</label>
+    <input #newAbv><br>
+  </div>
+  <button class="btn-info" (click)="submitForm(newName.value, newBrand.value, newPrice.value, newAbv.value); newName.value=''; newBrand.value=''; newPrice.value=''; newAbv.value=''">add</button>
+</div>

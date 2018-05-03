@@ -15,6 +15,14 @@ export class KegListComponent {
     this.clickSender.emit(kegToEdit);
   }
 
+  sellPint(currentKeg) {
+    if (currentKeg.pints > 1) {
+      currentKeg.pints -=1;
+    } else {
+      currentKeg.pints = "No";
+    }
+  }
+
   priceColor(currentKeg) {
     if (currentKeg.price <= 5) {
       return "low-price";
@@ -24,7 +32,7 @@ export class KegListComponent {
   }
 
   kegColor(currentKeg) {
-    if (currentKeg.pints <= 10) {
+    if (currentKeg.pints <= 10 || currentKeg.pints === "No") {
       return "low-keg";
     }
   }
